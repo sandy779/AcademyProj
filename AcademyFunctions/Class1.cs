@@ -47,32 +47,35 @@ namespace AcademyFunctions
         }
 
         //    DispalyTrainer(){
-    }
+    
 
 
     // DisplayBatch(){
-}
-        public static void insertRecords(int rollno, string name, string contact, string address, string email, string trainer, string batch,int marks1,int marks2)
-        {
-            con.Open();
-            string query = "insert into student values(" + rollno + ",'" + name + "','" + contact + "','" + address + "','" + email + "','" + trainer + "','" + batch + "'," + marks1 + "," + marks2 + ")";
-            cmd = new SqlCommand(query, con);
-            cmd.ExecuteNonQuery();
-            //try
-            //{
-            //    con.Open();
-            //    cmd.ExecuteNonQuery();
-            //}
-            //catch (System.Data.SqlClient.SqlException ex)
-            //{
-            //    string msg = "Insert Error:";
-            //    msg += ex.Message;
-            //}
-            //finally
-            //{
-            //    con.Close();
-            //}
+
+public static void insertRecords(int rollno, string name, string contact, string address, string email, string trainer, string batch, int marks1, int marks2)
+{
+    con.Open();
+    string query = "insert into student values(" + rollno + ",'" + name + "','" + contact + "','" + address + "','" + email + "','" + trainer + "','" + batch + "'," + marks1 + "," + marks2 + ")";
+    cmd = new SqlCommand(query, con);
+    cmd.ExecuteNonQuery();
+
+   
+            try
+            {
+               
+               cmd.ExecuteNonQuery();
+            }
+            catch (System.Data.SqlClient.SqlException ex)
+            {
+                string msg = "Insert Error:";
+                msg += ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
 
         }
     }
 }
+

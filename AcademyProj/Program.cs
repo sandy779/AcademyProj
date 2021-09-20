@@ -31,7 +31,7 @@ namespace AcademyProj
                 string contact;
                 string address;
                 string email;
-                string trainer;
+                string trainerid;
                 string batch;
                 int marks1, marks2;
             switch (choice)
@@ -40,6 +40,13 @@ namespace AcademyProj
                         Console.WriteLine("Enter Your details Rollno, Name, contact, address, email, trainerid, batch, marks1, and marks2");
                         rollno = Convert.ToInt32(Console.ReadLine());
                         name = Console.ReadLine();
+                        contact = Console.ReadLine();
+                        address = Console.ReadLine();
+                        email = Console.ReadLine();
+                        trainerid = Console.ReadLine();
+                        batch = Console.ReadLine();
+                        marks1 = Convert.ToInt32( Console.ReadLine());
+                        marks2 = Convert.ToInt32(Console.ReadLine());
                         // display trainer and batch details 
 
                         //Class1.DisplayTrainer();
@@ -64,6 +71,10 @@ namespace AcademyProj
             Console.WriteLine("Do you wish to continue");
             reply = Convert.ToChar(Console.ReadLine());
         }while(reply=='y');
+            if(reply!='y'|| reply != 'Y')
+            {
+                Console.WriteLine("Records Inserted");
+            }
             Console.ReadLine();
         }
     }
